@@ -4,42 +4,29 @@ package com.binarysearch;
 //Tc:O(logn),Sc:O(1)
 
 public class SingleEleInSortedArr {
-	public static int method(int[] nums) {
-		int s = 0, e = nums.length - 1;
-
-        if (nums.length == 1) //edge case
-            return nums[0];
-
-        while (s <= e) {
-            int m = s + (e - s) / 2;
-
-            if (m == 0 && nums[0] != nums[1]) //edge case
-                return nums[0];
-            if (m == nums.length - 1 && nums[m] != nums[m - 1])  //edge case
-                return nums[m];
-
-            if (m > 0 && m < nums.length - 1 &&
-                nums[m] != nums[m - 1] && nums[m] != nums[m + 1]) {
-                return nums[m];
-            }
-
-            if (m % 2 == 0) {
-                if (nums[m] == nums[m + 1]) {
-                    s = m + 1;
-                } else {
-                    e = m - 1;
-                }
-            } else {
-                if (nums[m] == nums[m - 1]) {
-                    s = m + 1;
-                } else {
-                    e = m - 1;
-                }
-            }
-        }
-        return -1;
-	}
-
+	  public static int method(int[] nums) {
+	        int n=nums.length;
+	        if(n==1)
+	            return nums[0];
+	        if(nums[0]!=nums[1])
+	            return nums[0];
+	        if(nums[n-1]!=nums[n-2])
+	            return nums[n-1];
+	        int l=1,h=n-2;
+	        while(l<=h){
+	            int m=l+(h-l)/2;
+	            if(nums[m]!=nums[m+1] && nums[m]!=nums[m-1]){
+	                return nums[m];
+	            }
+	            if((m%2==1 && nums[m]==nums[m-1]) || (m%2==0 && nums[m]==nums[m+1])){
+	                l=m+1;
+	            }
+	            else{
+	                h=m-1;
+	            }
+	        }
+	        return -1;
+	    }
 	public static void main(String[] args) {
 		int[] nums= {1,1,2,3,3,4,4,8,8};
 		//int[] nums= {3,3,7,7,10,11,11};
