@@ -2,38 +2,28 @@ package binarysearchOn1D;
 
 public class RotationCount {
 
-    public static int countRotations(int[] ar) {
-        int peak = findPeak(ar);
-        return peak + 1;
-    }
-    public static int findPeak(int[] ar) {
-        int s = 0;
-        int e = ar.length - 1;
+	public static int method(int[] ar) {
 
-        while (s <= e) {
-            int m = s + (e - s) / 2;
+        int l = 0, h = ar.length - 1;
+        int ans = Integer.MAX_VALUE;
 
-            // Case 1: middle element > next → m is peak
-            if (m < e && ar[m] > ar[m + 1]) {
-                return m;
+        while (l <= h) {
+            int m = l + (h - l) / 2;
+
+            // Left half sorted
+            if (ar[l] <= ar[m]) {
+                ans = Math.min(ans, ar[l]);
+                l = m + 1;
             }
-
-            // Case 2: middle element < previous → previous is peak
-            if (m > s && ar[m] < ar[m - 1]) {
-                return m - 1;
-            }
-
-            // Case 3: decide which side to go
-            if (ar[m] >= ar[s]) {
-                s = m + 1;
-            } else {
-                e = m - 1;
+            else { // Right half sorted
+                ans = Math.min(ans, ar[m]);
+                h = m - 1;
             }
         }
-        return -1; // means array not rotated
+        return l;
     }
     public static void main(String[] args) {
         int[] ar = {15, 18, 2, 3, 6, 12};
-        System.out.println(countRotations(ar)); 
+        System.out.println(method(ar)); 
     }
 }
