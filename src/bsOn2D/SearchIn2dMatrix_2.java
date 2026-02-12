@@ -1,4 +1,4 @@
-package com.Array2D;
+package bsOn2D;
 
 //https://leetcode.com/problems/search-a-2d-matrix-ii --(overlapping case)
 //Integers in each row are sorted in ascending from left to right.

@@ -1,4 +1,4 @@
-package com.binarysearch;
+package bsOnAnswers;
 
 /* Aggressive Cows Problem Assign C cows to N stalls such that min distance
   between them is largest possible.  Return largest minimum distance.*/

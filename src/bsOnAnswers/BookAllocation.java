@@ -1,4 +1,4 @@
-package com.binarysearch;
+package bsOnAnswers;
 
 /* Book Allocation Problem There are N books, each ith book has A[i] number of pages.
  You have to allocate books to M number of students so that the maximum number of pages allocated to a student is minimum.

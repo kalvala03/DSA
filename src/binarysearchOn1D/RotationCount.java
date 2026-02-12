@@ -1,4 +1,4 @@
-package com.binarysearch;
+package binarysearchOn1D;
 
 public class RotationCount {
 

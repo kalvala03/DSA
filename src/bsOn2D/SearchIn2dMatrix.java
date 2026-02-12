@@ -1,4 +1,4 @@
-package com.Array2D;
+package bsOn2D;
 
 //https://leetcode.com/problems/search-a-2d-matrix-->(no overlapping case)
 //Each row is sorted in non-decreasing order.

@@ -1,12 +1,13 @@
-package com.binarysearch;
+package binarysearchOn1D;
 
-//floor of number:return index of greatest element that is < or = target element
-public class FloorOfNum {
+public class BinarySearch {
+
 	public static int binSearch(int[] ar,int key) {
 		int low=0;
 		int high=ar.length-1;
 		
 		while(low<=high) {
+			//int mid=low+high/2;  this formula might exceeds the range of integer
 			int mid=low+(high-low)/2;
 			if(key<ar[mid]) {
 				high=mid-1;
@@ -18,12 +19,14 @@ public class FloorOfNum {
 				return mid;
 			}
 		}
-		return high;
+		return -1;
 	}
+		
+	
 	public static void main(String[] args) {
-		int[] ar= {2,3,5,9,14,16,18};
-		int key=2;
+		int[] ar= {9,11,23,48,64,88,94};
+		int key=94;
 		System.out.println(binSearch(ar,key));
-
 	}
+
 }

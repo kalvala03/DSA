@@ -1,4 +1,4 @@
-package com.binarysearch;
+package binarysearchOn1D;
 
 //when we don't know whether the array is sorted in ascending or descending order
 

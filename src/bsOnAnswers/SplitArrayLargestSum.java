@@ -1,4 +1,4 @@
-package com.binarysearch;
+package bsOnAnswers;
 
 //https://leetcode.com/problems/split-array-largest-sum/
 //410. Split Array Largest Sum

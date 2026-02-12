@@ -1,4 +1,4 @@
-package com.binarysearch;
+package bsOnAnswers;
 
 /*Painter's Partition Problem Given are N boards of length of each given in the form of array,
   and Mpainters, such that each painter takes 1 unit of time to paint 1 unit of the board.

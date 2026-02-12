@@ -1,4 +1,4 @@
-package com.binarysearch;
+package binarysearchOn1D;
 
 //https://leetcode.com/problems/find-in-mountain-array/
 //1095. Find in Mountain Array
