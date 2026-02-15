@@ -5,19 +5,21 @@ public class RotationCount {
 	public static int method(int[] ar) {
 
         int l = 0, h = ar.length - 1;
-        int ans = Integer.MAX_VALUE;
 
         while (l <= h) {
             int m = l + (h - l) / 2;
-
+            
+            //if array is already sorted
+            if (ar[l] <= ar[h]) {
+                return l;  
+            }           
             // Left half sorted
             if (ar[l] <= ar[m]) {
-                ans = Math.min(ans, ar[l]);
                 l = m + 1;
             }
-            else { // Right half sorted
-                ans = Math.min(ans, ar[m]);
-                h = m - 1;
+            // Right half sorted 
+            else {               
+                h = m;
             }
         }
         return l;
