@@ -7,10 +7,9 @@ public class KthEleOfTwoSortedArrs {
 			return method(ar2,ar1,k);
 		}
 		int l=Math.max(k-ar2.length,0),h=Math.min(k, ar1.length);
-		int left=k;
 		while(l<=h) {
 			int m1=l+(h-l)/2;
-			int m2=left-m1;
+			int m2=k-m1;
 			int l1 = Integer.MIN_VALUE;
 			int l2 = Integer.MIN_VALUE;
 			int r1 = Integer.MAX_VALUE;
