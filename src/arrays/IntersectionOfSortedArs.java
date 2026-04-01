@@ -19,7 +19,7 @@ public class IntersectionOfSortedArs {
 	 }
 	
 	//Approch2->Tc:O(m+n)  Sc:O(n)
-	static List<Integer> method1(int[] a,int[] b){
+	static int[] method1(int[] a,int[] b){
 	      Set<Integer> s=new HashSet<>();
 	      for(int i=0;i<a.length;i++){
 	        s.add(a[i]);
@@ -31,12 +31,16 @@ public class IntersectionOfSortedArs {
 	          s.remove(b[i]);
 	        }
 	      }
-	      return ans;
+	      int[] res=new int[ans.size()];
+          for(int i=0;i<ans.size();i++){
+            res[i]=ans.get(i);
+          }
+          return res;
 	  }
 	
 	 public static void main(String[] args) {
 	    int[] a={1,2,1,3,1};
 	    int[] b={3,1,3,4,1};
-	    System.out.println(method1(a,b));
+	    System.out.println(Arrays.toString(method1(a,b)));
 	 }
 }
