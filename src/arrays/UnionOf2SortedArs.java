@@ -7,11 +7,9 @@ public class UnionOf2SortedArs {
 	  static List<Integer> method(int a[],int b[]) {
 			Set<Integer> st = new TreeSet<>();
 			
-			// Put all elements of a[] in st
 			for (int i = 0; i < a.length; i++)
 			st.add(a[i]);
 			
-			// Put all elements of b[] in st
 			for (int i = 0; i < b.length; i++)
 			st.add(b[i]);
 			
@@ -25,7 +23,6 @@ public class UnionOf2SortedArs {
 	        int n = a.length;
 	        int m = b.length;
 	        
-	        // This is similar to merge of merge sort
 	        int i = 0, j = 0;
 	        while(i < n && j < m) {
 	            
