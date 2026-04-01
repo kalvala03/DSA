@@ -7,25 +7,20 @@ public class FindDuplicate {
     public static int findDuplicate(int[] nums) {
         int i = 0;
         while (i < nums.length) {
-
-            int correctIndex = nums[i] - 1;      // Correct position for nums[i]
-
-            if (nums[i] != nums[correctIndex]) {    // If number is not at correct position
-
-                // swap nums[i] with nums[correctIndex]
+            int correctIndex = nums[i] - 1;      
+            if (nums[i] != nums[correctIndex]) {    
                 int temp = nums[i];
                 nums[i] = nums[correctIndex];
                 nums[correctIndex] = temp;
-
             } 
-            // Number is already at its correct position → duplicate
-            else if (i != correctIndex) {
-                return nums[i];
-            } 
-            // Number already placed correctly
             else {
                 i++;
             }
+        }
+        for(int j=0;j<nums.length;j++) {
+        	if(nums[j]!=j+1) {
+        		return nums[j];
+        	}
         }
         return -1;
     }
